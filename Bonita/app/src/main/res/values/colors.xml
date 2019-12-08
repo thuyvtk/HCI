@@ -8,11 +8,13 @@
     <color name="white">#ffffff</color>
     <color name="main">#1a0d00</color>
     <color name="main_dark">#d9d9d9</color>
+    <color name="dark">#f2f2f2</color>
     <color name="pink">#fcdcde</color>
     <color name="main_pink">#fde8e9</color>
     <color name="orange">#ffbe86</color>
     <color name="main_orange">#ffc999</color>
     <color name="text_search">#999999</color>
+    <color name="text_search_women">#999999</color>
     <color name="text">#0d0d0d</color>
     <color name="text_top">#595959</color>
     <color name="line">#ff8a00</color>

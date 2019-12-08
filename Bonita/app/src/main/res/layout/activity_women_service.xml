@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.WomenServiceActivity">
+
+    <LinearLayout
+        android:id="@+id/search_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/gradient_white_dark"
+        android:orientation="horizontal">
+        <!--search bar-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="7dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_pre"
+                android:layout_marginTop="3dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnSearchBar"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/border_radius"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/main_ic_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="Tp.Hồ Chí Minh"
+                android:textColor="@color/text_search" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:src="@drawable/ic_next" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:text="Tóc nữ"
+                android:textColor="@color/text_search_women"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <!--notification-->
+        <ImageView
+            android:id="@+id/imgFilter"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_filter" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Lọc"
+            android:textColor="@color/text_search_women"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--top location-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:text="ĐỊA ĐIỂM UY TÍN"
+                android:textColor="@color/text"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTopLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

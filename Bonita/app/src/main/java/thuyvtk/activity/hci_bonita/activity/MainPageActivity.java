@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.smarteist.autoimageslider.CircularSliderHandle;
 import com.smarteist.autoimageslider.IndicatorAnimations;
@@ -35,6 +36,11 @@ public class MainPageActivity extends Activity {
     RecyclerView rvTop;
     RecyclerView rvDeadline;
 
+    BrandAdapter brandAdapter = new BrandAdapter();
+    SuperDiscountAdapter superDiscountAdapter = new SuperDiscountAdapter();
+    TopAdapter topAdapter = new TopAdapter();
+    DeadlineAdapter deadlineAdapter = new DeadlineAdapter();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,23 +58,23 @@ public class MainPageActivity extends Activity {
 
         rvType = findViewById(R.id.rvType);
         rvType.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvType.setAdapter(new RecycleViewAdapter());
+        rvType.setAdapter(new RecycleViewAdapter(getApplicationContext()));
 
         rvBrand = findViewById(R.id.rvBrand);
         rvBrand.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvBrand.setAdapter(new BrandAdapter());
+        rvBrand.setAdapter(brandAdapter);
 
         rvSuperDiscount = findViewById(R.id.rvSuperDiscount);
         rvSuperDiscount.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvSuperDiscount.setAdapter(new SuperDiscountAdapter());
+        rvSuperDiscount.setAdapter(superDiscountAdapter);
 
         rvTop = findViewById(R.id.rvTop);
         rvTop.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvTop.setAdapter(new TopAdapter());
+        rvTop.setAdapter(topAdapter);
 
         rvDeadline = findViewById(R.id.rvDeadline);
         rvDeadline.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvDeadline.setAdapter(new DeadlineAdapter());
+        rvDeadline.setAdapter(deadlineAdapter);
 
 
     }

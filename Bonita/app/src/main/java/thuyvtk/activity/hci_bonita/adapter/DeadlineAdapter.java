@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,17 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.MyView
             R.drawable.deadline4,
     };
 
+    public String[] discounts = {
+         "-25%", "-50%","300K","269K"
+    };
+
+    public String[] names = {
+      "KEIRIN HAIR : Toàn dịch vụ",
+      "LIFE SALON : Làm tóc cô dâu",
+      "NHAT THIEN SALON : Làm tóc",
+      "BAC TRAN TIEN HAIR : Đồng giá nhuộm"
+    };
+
     @NonNull
     @Override
     public MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -29,6 +41,8 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyView holder, int position) {
         holder.ivImage.setImageResource(images[position]);
+        holder.txtDiscout.setText(discounts[position]);
+        holder.txtName.setText(names[position]);
     }
 
     @Override
@@ -41,14 +55,14 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.MyView
 
 
         public ImageView ivImage;
-//        public TextView txtDiscout;
-//        public TextView txtName;
+        public TextView txtDiscout;
+        public TextView txtName;
 
         public MyView(View view) {
             super(view);
             ivImage = view.findViewById(R.id.ivImage);
-//            txtDiscout = view.findViewById(R.id.txtDiscount);
-//            txtName = view.findViewById(R.id.txtName);
+            txtDiscout = view.findViewById(R.id.txtDiscount);
+            txtName = view.findViewById(R.id.txtName);
         }
     }
 }
