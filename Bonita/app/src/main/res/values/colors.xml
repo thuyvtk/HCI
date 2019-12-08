@@ -19,5 +19,6 @@
     <color name="text_top">#595959</color>
     <color name="line">#ff8a00</color>
     <color name="red">#cc0000</color>
+    <color name="tab">#ff1a1a</color>
 
 </resources>
