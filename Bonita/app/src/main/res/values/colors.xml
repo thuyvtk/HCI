@@ -14,6 +14,8 @@
     <color name="main_orange">#ffc999</color>
     <color name="text_search">#999999</color>
     <color name="text">#0d0d0d</color>
+    <color name="text_top">#595959</color>
     <color name="line">#ff8a00</color>
+    <color name="red">#cc0000</color>
 
 </resources>

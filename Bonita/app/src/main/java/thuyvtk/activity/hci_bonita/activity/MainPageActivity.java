@@ -16,9 +16,11 @@ import com.smarteist.autoimageslider.SliderView;
 
 import thuyvtk.activity.hci_bonita.R;
 import thuyvtk.activity.hci_bonita.adapter.BrandAdapter;
+import thuyvtk.activity.hci_bonita.adapter.DeadlineAdapter;
 import thuyvtk.activity.hci_bonita.adapter.RecycleViewAdapter;
 import thuyvtk.activity.hci_bonita.adapter.SliderAdapter;
 import thuyvtk.activity.hci_bonita.adapter.SuperDiscountAdapter;
+import thuyvtk.activity.hci_bonita.adapter.TopAdapter;
 
 public class MainPageActivity extends Activity {
 
@@ -30,6 +32,8 @@ public class MainPageActivity extends Activity {
     RecyclerView rvType;
     RecyclerView rvBrand;
     RecyclerView rvSuperDiscount;
+    RecyclerView rvTop;
+    RecyclerView rvDeadline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,14 @@ public class MainPageActivity extends Activity {
         rvSuperDiscount.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
         rvSuperDiscount.setAdapter(new SuperDiscountAdapter());
 
+        rvTop = findViewById(R.id.rvTop);
+        rvTop.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
+        rvTop.setAdapter(new TopAdapter());
+
+        rvDeadline = findViewById(R.id.rvDeadline);
+        rvDeadline.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
+        rvDeadline.setAdapter(new DeadlineAdapter());
+
 
     }
 
@@ -70,8 +82,5 @@ public class MainPageActivity extends Activity {
         imageSlider.setScrollTimeInSec(10);
     }
 
-    public void showTypeIcon() {
-
-    }
 
 }
