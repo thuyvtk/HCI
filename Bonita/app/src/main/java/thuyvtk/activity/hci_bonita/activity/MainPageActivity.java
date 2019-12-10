@@ -168,7 +168,8 @@ public class MainPageActivity extends FragmentActivity implements ScrollPickerDi
                     case 3:
                         drawerLayout.closeDrawer(Gravity.LEFT);
                         FragmentManager fm = getSupportFragmentManager();
-                        scrollPickerDialog = new ScrollPickerDialog(1, null);
+                        String[] arrItems = new String[]{"TP Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Cần Thơ"};
+                        scrollPickerDialog = new ScrollPickerDialog(1, arrItems,"THÀNH PHỐ");
                         scrollPickerDialog.show(fm, "fragment_choose_slot");
                         break;
                 }

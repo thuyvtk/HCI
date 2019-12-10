@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,7 +30,8 @@ public class ScrollPickerDialog extends DialogFragment {
     ArrayList<String> slots;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
     LinearLayoutManager horizontalLayout;
-
+    String title;
+    String selected;
 
     //
     int itemSelectedPos = 0;
@@ -36,9 +39,10 @@ public class ScrollPickerDialog extends DialogFragment {
     public ScrollPickerDialog() {
     }
 
-    public ScrollPickerDialog(int itemType, String[] arrItems) {
+    public ScrollPickerDialog(int itemType, String[] arrItems, String title) {
         this.itemType = itemType;
         this.arrItems = arrItems;
+        this.title = title;
     }
 
     @Override
@@ -51,19 +55,26 @@ public class ScrollPickerDialog extends DialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        arrItems = new String[]{"TP Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Cần Thơ"};
         numberpicker = (NumberPicker) getView().findViewById(R.id.numberPicker1);
+        TextView titles = getView().findViewById(R.id.title);
+        titles.setText(title);
         numberpicker.setMinValue(0);
         numberpicker.setMaxValue(arrItems.length - 1);
         numberpicker.setDisplayedValues(arrItems);
-
-        listener.itemPicked(0, 0,  arrItems[0]);
+        Button btnDoneChooseSlot = getView().findViewById(R.id.btnDoneChooseSlot);
 
         numberpicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                listener.itemPicked(itemType, newVal, arrItems[newVal]);
-                itemSelectedPos = newVal;
+//                listener.itemPicked(itemType, newVal, arrItems[newVal]);
+//                itemSelectedPos = newVal;
+                selected = arrItems[newVal];
+            }
+        });
+        btnDoneChooseSlot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.itemPicked(itemType, 0, selected);
             }
         });
     }
@@ -78,7 +89,7 @@ public class ScrollPickerDialog extends DialogFragment {
                     "Must implement ChooseModelListener");
         }
     }
-    
+
 
     public interface ChooseModelListener {
         void itemPicked(Integer itemType, Integer modelId, String modelName);

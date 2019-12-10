@@ -1,9 +1,11 @@
-package thuyvtk.activity.hci_bonita;
+package thuyvtk.activity.hci_bonita.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+
+import thuyvtk.activity.hci_bonita.R;
 
 public class Notification extends AppCompatActivity {
 
