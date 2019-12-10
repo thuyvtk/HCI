@@ -10,7 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.WomenServiceActivity"></activity>
+        <activity android:name=".Notification"></activity>
+        <activity
+            android:name=".activity.TradeMarkFollow"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".activity.MarkedSaleOff"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".activity.SaleOffActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".activity.WomenServiceActivity" />
         <activity android:name=".activity.MainPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

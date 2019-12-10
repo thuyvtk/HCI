@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:background="@drawable/border_bottom"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="THÀNH PHỐ"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_up_arrow"
+            android:tint="@color/button_green"
+            />
+        <NumberPicker
+            android:id="@+id/numberPicker1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="10dp"
+            android:theme="@style/AppCompatAlertDialogStyle"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_down_arrow"
+            android:tint="@color/button_green"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            >
+            <Button
+                android:id="@+id/btnDoneChooseSlot"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@color/button_green"
+                android:gravity="center"
+                android:text="XONG"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
