@@ -192,10 +192,10 @@ public class MainPageActivity extends FragmentActivity implements ScrollPickerDi
     }
 
     private ArrayList<MenuItemDTO> getMenus(){
-        arrayList.add(new MenuItemDTO("Mã khuyến mãi của tôi",R.drawable.ic_add_black));
-        arrayList.add(new MenuItemDTO("Khuyến mãi đánh dấu",R.drawable.ic_add_black));
+        arrayList.add(new MenuItemDTO("Mã khuyến mãi của tôi",R.drawable.ic_menu_item1));
+        arrayList.add(new MenuItemDTO("Đánh dấu",R.drawable.ic_tag_black));
         arrayList.add(new MenuItemDTO("Theo dõi thương hiệu",R.drawable.ic_add_black));
-        arrayList.add(new MenuItemDTO("Thành Phố Hồ Chí Minh",R.drawable.ic_add_black));
+        arrayList.add(new MenuItemDTO("Thành Phố Hồ Chí Minh",R.drawable.ic_location_black));
         return arrayList;
     }
 
