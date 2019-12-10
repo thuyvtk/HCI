@@ -20,5 +20,6 @@
     <color name="line">#ff8a00</color>
     <color name="red">#cc0000</color>
     <color name="tab">#ff1a1a</color>
+    <color name="space">#e6e600</color>
 
 </resources>

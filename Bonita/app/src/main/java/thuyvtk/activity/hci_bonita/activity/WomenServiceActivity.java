@@ -1,24 +1,32 @@
 package thuyvtk.activity.hci_bonita.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import thuyvtk.activity.hci_bonita.R;
+import thuyvtk.activity.hci_bonita.adapter.BrandChildAdapter;
+import thuyvtk.activity.hci_bonita.adapter.NearbyChildAdapter;
 import thuyvtk.activity.hci_bonita.adapter.TopLocationAdapter;
+import thuyvtk.activity.hci_bonita.fragment.NearbyFragment;
+import thuyvtk.activity.hci_bonita.fragment.NewestFragment;
+import thuyvtk.activity.hci_bonita.fragment.SuperDiscountFragment;
+import thuyvtk.activity.hci_bonita.fragment.TrendFragment;
 
-public class WomenServiceActivity extends Activity {
+public class WomenServiceActivity extends FragmentActivity {
 
     RecyclerView rvTopLocation;
     TextView btnNewest;
     TextView btnNearBy;
     TextView btnTrend;
     TextView btnSuperDiscount;
+    RecyclerView rvBrandWoment;
+    RecyclerView rvNearby;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,10 @@ public class WomenServiceActivity extends Activity {
         setContentView(R.layout.activity_women_service);
         defineView();
         showTopLocation();
+        showTopBrand();
+        showNearBy();
+        selectedTab(btnNewest);
+        loadFragment(new NewestFragment());
     }
 
     public void defineView() {
@@ -34,47 +46,53 @@ public class WomenServiceActivity extends Activity {
         btnTrend = findViewById(R.id.btnTrend);
         btnSuperDiscount = findViewById(R.id.btnSuperDiscount);
 
-        btnNewest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedTab(btnNewest);
-                unSelectedTab(btnNearBy);
-                unSelectedTab(btnTrend);
-                unSelectedTab(btnSuperDiscount);
-            }
-        });
+        selectedNewestTab();
+        selectedNearByTab();
+        selectedTrendTab();
+        selectedSupperDiscountTab();
 
-        btnNearBy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedTab(btnNearBy);
-                unSelectedTab(btnNewest);
-                unSelectedTab(btnTrend);
-                unSelectedTab(btnSuperDiscount);
-            }
-        });
+    }
 
-        btnTrend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedTab(btnTrend);
-                unSelectedTab(btnNearBy);
-                unSelectedTab(btnTrend);
-                unSelectedTab(btnSuperDiscount);
-            }
-        });
+    public void showTopBrand() {
+        Integer[] images = {
+                R.drawable.four,
+                R.drawable.women_brand1,
+                R.drawable.women_brand3,
+                R.drawable.woment_brand2,
+        };
+        String[] topLocationNames = {
+                "GIFT SALON",
+                "CHANG SALON",
+                "ONE PHOTO SALON",
+                "FREE SALON"
+        };
+        rvBrandWoment = findViewById(R.id.rvBrandWomen);
+        rvBrandWoment.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
+        rvBrandWoment.setAdapter(new BrandChildAdapter(images, topLocationNames));
+    }
 
-        btnSuperDiscount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedTab(btnSuperDiscount);
-                unSelectedTab(btnNearBy);
-                unSelectedTab(btnSuperDiscount);
-                unSelectedTab(btnTrend);
-            }
-        });
+    public void showNearBy() {
+        Integer[] images = {
+                R.drawable.discount1,
+                R.drawable.discount2,
+                R.drawable.discount4,
+        };
 
+        String[] discountNumbers = {
+                "-69%",
+                "-80%",
+                "-50%",
+        };
 
+        String[] names = {
+                "HAIR STAR",
+                "NHAT THIEN SALON",
+                "Bac Tran Tien Hair"
+        };
+
+        rvNearby = findViewById(R.id.rvNearby);
+        rvNearby.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
+        rvNearby.setAdapter(new NearbyChildAdapter(images, discountNumbers,names));
     }
 
     public void showTopLocation() {
@@ -105,4 +123,64 @@ public class WomenServiceActivity extends Activity {
         textView.setTextColor(getResources().getColor(R.color.text));
     }
 
+    public void selectedNewestTab() {
+        btnNewest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTab(btnNewest);
+                unSelectedTab(btnNearBy);
+                unSelectedTab(btnTrend);
+                unSelectedTab(btnSuperDiscount);
+                loadFragment(new NewestFragment());
+            }
+        });
+    }
+
+    public void selectedNearByTab() {
+        btnNearBy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTab(btnNearBy);
+                unSelectedTab(btnNewest);
+                unSelectedTab(btnTrend);
+                unSelectedTab(btnSuperDiscount);
+                loadFragment(new NearbyFragment());
+            }
+        });
+    }
+
+    public void selectedTrendTab() {
+        btnTrend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTab(btnTrend);
+                unSelectedTab(btnNearBy);
+                unSelectedTab(btnNewest);
+                unSelectedTab(btnSuperDiscount);
+                loadFragment(new TrendFragment());
+            }
+        });
+    }
+
+    public void selectedSupperDiscountTab() {
+        btnSuperDiscount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedTab(btnSuperDiscount);
+                unSelectedTab(btnNearBy);
+                unSelectedTab(btnNewest);
+                unSelectedTab(btnTrend);
+                loadFragment(new SuperDiscountFragment());
+            }
+        });
+    }
+
+    public void loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+        }
+    }
 }

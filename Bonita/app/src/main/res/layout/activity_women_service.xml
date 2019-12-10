@@ -101,18 +101,120 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
-                <!--top location-->
+                <!--nearby location-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="ĐẶT NHIỀU GẦN BẠN"
+                        android:textColor="@color/text"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="-130dp"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="7dp"
+                        android:src="@drawable/ic_location" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="50 Lê Văn Việt, Hiệp Phú, Quận 9, Hồ Chí Mi..."
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_rotate_left_black_24dp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNearby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+
+
+                <!--Brand-->
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:layout_marginTop="10dp"
-                    android:text="ĐỊA ĐIỂM UY TÍN"
+                    android:layout_marginTop="40dp"
+                    android:text="THƯƠNG HIỆU NỔI BẬT"
                     android:textColor="@color/text"
                     android:textSize="18dp"
                     android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/line" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBrandWomen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+
+
+                <!--top location-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ĐỊA ĐIỂM UY TÍN"
+                        android:textColor="@color/text"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="-150dp"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="60dp"
@@ -131,7 +233,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="40dp"
                     android:text="TẤT CẢ DÀNH CHO BẠN"
                     android:textColor="@color/text"
                     android:textSize="18dp"
@@ -175,7 +277,7 @@
                                 android:background="@drawable/border_tab_radius_red"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Mới nhất"
-                                android:textColor="@color/text"/>
+                                android:textColor="@color/text" />
 
                             <TextView
                                 android:id="@+id/btnNearBy"
@@ -186,7 +288,7 @@
                                 android:background="@drawable/border_tab_radius_red"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Gần tôi"
-                                android:textColor="@color/text"/>
+                                android:textColor="@color/text" />
 
                             <TextView
                                 android:id="@+id/btnTrend"
@@ -197,7 +299,7 @@
                                 android:background="@drawable/border_tab_radius_red"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Đặt nhiều"
-                                android:textColor="@color/text"/>
+                                android:textColor="@color/text" />
 
                             <TextView
                                 android:id="@+id/btnSuperDiscount"
@@ -207,7 +309,7 @@
                                 android:background="@drawable/border_tab_radius_red"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Giảm sâu"
-                                android:textColor="@color/text"/>
+                                android:textColor="@color/text" />
 
                         </LinearLayout>
 
