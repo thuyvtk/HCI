@@ -2,6 +2,7 @@ package thuyvtk.activity.hci_bonita.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import thuyvtk.activity.hci_bonita.R;
+import thuyvtk.activity.hci_bonita.adapter.AllAdapter;
 import thuyvtk.activity.hci_bonita.adapter.BrandChildAdapter;
+import thuyvtk.activity.hci_bonita.adapter.DeadlineAdapter;
 import thuyvtk.activity.hci_bonita.adapter.NearbyChildAdapter;
 import thuyvtk.activity.hci_bonita.adapter.TopLocationAdapter;
 import thuyvtk.activity.hci_bonita.fragment.NearbyFragment;
@@ -27,6 +30,9 @@ public class WomenServiceActivity extends FragmentActivity {
     TextView btnSuperDiscount;
     RecyclerView rvBrandWoment;
     RecyclerView rvNearby;
+    RecyclerView rvAll;
+
+    ImageView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +43,7 @@ public class WomenServiceActivity extends FragmentActivity {
         showTopBrand();
         showNearBy();
         selectedTab(btnNewest);
-        loadFragment(new NewestFragment());
+        showAll();
     }
 
     public void defineView() {
@@ -45,12 +51,23 @@ public class WomenServiceActivity extends FragmentActivity {
         btnNearBy = findViewById(R.id.btnNearBy);
         btnTrend = findViewById(R.id.btnTrend);
         btnSuperDiscount = findViewById(R.id.btnSuperDiscount);
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
 
         selectedNewestTab();
         selectedNearByTab();
         selectedTrendTab();
         selectedSupperDiscountTab();
 
+    }
+
+    public void back() {
+        this.finish();
     }
 
     public void showTopBrand() {
@@ -113,6 +130,13 @@ public class WomenServiceActivity extends FragmentActivity {
         rvTopLocation.setAdapter(new TopLocationAdapter(images, topLocationNames));
     }
 
+    public void showAll() {
+        rvAll = findViewById(R.id.rvAll);
+        rvAll.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false));
+        rvAll.setAdapter(new AllAdapter());
+
+    }
+
     public void selectedTab(TextView textView) {
         textView.setBackground(getResources().getDrawable(R.drawable.border_radius_red));
         textView.setTextColor(getResources().getColor(R.color.tab));
@@ -131,7 +155,7 @@ public class WomenServiceActivity extends FragmentActivity {
                 unSelectedTab(btnNearBy);
                 unSelectedTab(btnTrend);
                 unSelectedTab(btnSuperDiscount);
-                loadFragment(new NewestFragment());
+//                loadFragment(new NewestFragment());
             }
         });
     }
@@ -144,7 +168,7 @@ public class WomenServiceActivity extends FragmentActivity {
                 unSelectedTab(btnNewest);
                 unSelectedTab(btnTrend);
                 unSelectedTab(btnSuperDiscount);
-                loadFragment(new NearbyFragment());
+//                loadFragment(new NearbyFragment());
             }
         });
     }
@@ -157,7 +181,7 @@ public class WomenServiceActivity extends FragmentActivity {
                 unSelectedTab(btnNearBy);
                 unSelectedTab(btnNewest);
                 unSelectedTab(btnSuperDiscount);
-                loadFragment(new TrendFragment());
+//                loadFragment(new TrendFragment());
             }
         });
     }
@@ -170,17 +194,11 @@ public class WomenServiceActivity extends FragmentActivity {
                 unSelectedTab(btnNearBy);
                 unSelectedTab(btnNewest);
                 unSelectedTab(btnTrend);
-                loadFragment(new SuperDiscountFragment());
+//                loadFragment(new SuperDiscountFragment());
             }
         });
     }
 
-    public void loadFragment(Fragment fragment) {
-        if (fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .commit();
-        }
+    public void loadFragment(Integer[] imgs, String[] names,String[] discounts) {
     }
 }
