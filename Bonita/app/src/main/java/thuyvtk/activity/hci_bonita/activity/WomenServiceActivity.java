@@ -109,7 +109,7 @@ public class WomenServiceActivity extends FragmentActivity {
 
         rvNearby = findViewById(R.id.rvNearby);
         rvNearby.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvNearby.setAdapter(new NearbyChildAdapter(getApplicationContext(),images, discountNumbers,names));
+        rvNearby.setAdapter(new NearbyChildAdapter(this,images, discountNumbers,names));
     }
 
     public void showTopLocation() {

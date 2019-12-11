@@ -87,7 +87,7 @@ public class MainPageActivity extends FragmentActivity implements ScrollPickerDi
 
         rvType = findViewById(R.id.rvType);
         rvType.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
-        rvType.setAdapter(new RecycleViewAdapter(getApplicationContext()));
+        rvType.setAdapter(new RecycleViewAdapter(this));
 
         rvBrand = findViewById(R.id.rvBrand);
         rvBrand.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
@@ -176,15 +176,6 @@ public class MainPageActivity extends FragmentActivity implements ScrollPickerDi
             }
         });
 
-        //list Other
-        lvOther.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 0:
-                }
-            }
-        });
     }
 
     private int getListViewHeight(int size){
@@ -217,8 +208,12 @@ public class MainPageActivity extends FragmentActivity implements ScrollPickerDi
 
     @Override
     public void itemPicked(Integer itemType, Integer modelId, String modelName) {
-
+        scrollPickerDialog.dismiss();
     }
 
 
+    public void clickToViewNotification(View view) {
+        Intent intent = new Intent(this,Notification.class);
+        startActivity(intent);
+    }
 }

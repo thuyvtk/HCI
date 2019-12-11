@@ -66,6 +66,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
+                android:onClick="clickToViewNotification"
                 android:src="@drawable/main_ic_bell" />
 
         </LinearLayout>
