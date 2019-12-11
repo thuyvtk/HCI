@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="thuyvtk.activity.hci_bonita">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,14 +17,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.AceptedScreen"></activity>
+        <activity
+            android:name=".activity.OrderDetail"
+            android:windowSoftInputMode="adjustPan" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".activity.DetailDiscountActivity">
 
-        </activity>
+        <activity android:name=".activity.DetailDiscountActivity" />
         <activity android:name=".activity.WomenServiceActivity" />
-        <activity android:name=".activity.Notification"></activity>
+        <activity android:name=".activity.Notification" />
         <activity
             android:name=".activity.TradeMarkFollow"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
