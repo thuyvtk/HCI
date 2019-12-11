@@ -1,6 +1,7 @@
 package thuyvtk.activity.hci_bonita.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -133,5 +134,11 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
         mMap.addMarker(new MarkerOptions().position(sydney).title("30 shine Quang Trung"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(20));
+    }
+
+    public void clickToOrder(View view) {
+        Intent intent = new Intent(this, OrderDetail.class);
+        startActivity(intent);
+        this.finish();
     }
 }
