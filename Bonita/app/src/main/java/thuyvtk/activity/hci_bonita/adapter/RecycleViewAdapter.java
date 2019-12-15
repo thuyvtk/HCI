@@ -30,8 +30,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     };
 
     public String[] typeNames = {
-      "Nữ",
-      "Nam",
+      "Tóc nữ",
+      "Tóc nam",
       "Nails",
       "Trang điểm",
       "Spa"

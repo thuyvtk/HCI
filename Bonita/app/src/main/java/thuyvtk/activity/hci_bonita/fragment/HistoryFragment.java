@@ -14,10 +14,10 @@ import thuyvtk.activity.hci_bonita.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewestFragment extends Fragment {
+public class HistoryFragment extends Fragment {
 
 
-    public NewestFragment() {
+    public HistoryFragment() {
         // Required empty public constructor
     }
 

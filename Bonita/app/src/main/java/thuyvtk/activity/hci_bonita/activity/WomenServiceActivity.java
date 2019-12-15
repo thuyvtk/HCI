@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,13 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import thuyvtk.activity.hci_bonita.R;
 import thuyvtk.activity.hci_bonita.adapter.AllAdapter;
 import thuyvtk.activity.hci_bonita.adapter.BrandChildAdapter;
-import thuyvtk.activity.hci_bonita.adapter.DeadlineAdapter;
 import thuyvtk.activity.hci_bonita.adapter.NearbyChildAdapter;
 import thuyvtk.activity.hci_bonita.adapter.TopLocationAdapter;
-import thuyvtk.activity.hci_bonita.fragment.NearbyFragment;
-import thuyvtk.activity.hci_bonita.fragment.NewestFragment;
-import thuyvtk.activity.hci_bonita.fragment.SuperDiscountFragment;
-import thuyvtk.activity.hci_bonita.fragment.TrendFragment;
 
 public class WomenServiceActivity extends FragmentActivity {
 
@@ -102,8 +96,8 @@ public class WomenServiceActivity extends FragmentActivity {
         };
 
         String[] names = {
-                "HAIR STAR",
                 "NHAT THIEN SALON",
+                "HAIR STAR",
                 "Bac Tran Tien Hair"
         };
 
@@ -155,7 +149,7 @@ public class WomenServiceActivity extends FragmentActivity {
                 unSelectedTab(btnNearBy);
                 unSelectedTab(btnTrend);
                 unSelectedTab(btnSuperDiscount);
-//                loadFragment(new NewestFragment());
+//                loadFragment(new HistoryFragment());
             }
         });
     }
@@ -168,7 +162,7 @@ public class WomenServiceActivity extends FragmentActivity {
                 unSelectedTab(btnNewest);
                 unSelectedTab(btnTrend);
                 unSelectedTab(btnSuperDiscount);
-//                loadFragment(new NearbyFragment());
+//                loadFragment(new BookingFragment());
             }
         });
     }

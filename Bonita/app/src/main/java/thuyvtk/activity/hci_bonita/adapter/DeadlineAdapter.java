@@ -1,5 +1,7 @@
 package thuyvtk.activity.hci_bonita.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import thuyvtk.activity.hci_bonita.R;
+import thuyvtk.activity.hci_bonita.activity.DetailDiscountActivity;
 
 public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.MyView>{
+
+    private Context context;
+
+    public DeadlineAdapter(Context context) {
+        this.context = context;
+    }
 
     public Integer[] images = {
             R.drawable.deadline1,
@@ -41,6 +50,13 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyView holder, int position) {
         holder.ivImage.setImageResource(images[position]);
+        holder.ivImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailDiscountActivity.class);
+                context.startActivity(intent);
+            }
+        });
         holder.txtDiscout.setText(discounts[position]);
         holder.txtName.setText(names[position]);
     }

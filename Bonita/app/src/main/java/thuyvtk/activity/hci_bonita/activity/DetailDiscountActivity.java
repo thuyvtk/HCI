@@ -6,6 +6,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
@@ -20,6 +21,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.smarteist.autoimageslider.IndicatorAnimations;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,6 +32,7 @@ import java.util.Locale;
 
 import thuyvtk.activity.hci_bonita.R;
 import thuyvtk.activity.hci_bonita.adapter.RecyclerViewAdapter;
+import thuyvtk.activity.hci_bonita.adapter.SliderAdapter;
 import thuyvtk.activity.hci_bonita.dialog.ScrollPickerDialog;
 
 public class DetailDiscountActivity extends FragmentActivity implements ScrollPickerDialog.ChooseModelListener, OnMapReadyCallback {
@@ -39,6 +44,8 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
     ScrollPickerDialog scrollPickerDialog;
     TextView address, number, time;
     GoogleMap mMap;
+    SliderView imageSlider;
+    ImageView btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,16 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
         time = findViewById(R.id.time);
         recyclerView = (RecyclerView) findViewById(R.id.rv_slotsAvailable);
         recyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        // show slider
+        showThumbnails();
 
         // Adding items to RecyclerView.
         AddItemsToRecyclerViewArrayList();
@@ -61,6 +78,22 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+    public void showThumbnails() {
+        imageSlider = findViewById(R.id.imageSlider);
+        Integer[] listThumnail = {
+                R.drawable.deadline3,
+                R.drawable.detail1,
+                R.drawable.detail3,
+                R.drawable.detail2,
+        };
+        imageSlider.setSliderAdapter(new SliderAdapter(listThumnail));
+        imageSlider.setAutoCycle(false);
+        imageSlider.startAutoCycle();
+        imageSlider.setIndicatorAnimation(IndicatorAnimations.WORM);
+        imageSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        imageSlider.setScrollTimeInSec(10);
     }
 
     public void AddItemsToRecyclerViewArrayList() {

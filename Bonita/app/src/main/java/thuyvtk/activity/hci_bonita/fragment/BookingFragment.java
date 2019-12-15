@@ -14,10 +14,10 @@ import thuyvtk.activity.hci_bonita.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NearbyFragment extends Fragment {
+public class BookingFragment extends Fragment {
 
 
-    public NearbyFragment() {
+    public BookingFragment() {
         // Required empty public constructor
     }
 

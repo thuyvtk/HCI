@@ -1,5 +1,7 @@
 package thuyvtk.activity.hci_bonita.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import thuyvtk.activity.hci_bonita.R;
+import thuyvtk.activity.hci_bonita.activity.DetailDiscountActivity;
 
 public class SuperDiscountAdapter extends RecyclerView.Adapter<SuperDiscountAdapter.MyView> {
+
+    private Context context;
 
     public Integer[] images = {
       R.drawable.discount1,
@@ -34,6 +39,9 @@ public class SuperDiscountAdapter extends RecyclerView.Adapter<SuperDiscountAdap
             "Bac Tran Tien Hair"
     };
 
+    public SuperDiscountAdapter(Context context) {
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -47,6 +55,14 @@ public class SuperDiscountAdapter extends RecyclerView.Adapter<SuperDiscountAdap
         holder.ivImage.setImageResource(images[position]);
         holder.txtDiscout.setText(discountNumbers[position]);
         holder.txtName.setText(names[position]);
+
+        holder.ivImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailDiscountActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

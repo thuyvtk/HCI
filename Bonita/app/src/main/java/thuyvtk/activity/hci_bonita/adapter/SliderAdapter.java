@@ -13,16 +13,10 @@ import thuyvtk.activity.hci_bonita.R;
 
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterVTK> {
 
-    private Context context;
-    private Integer[] listThumnail = {
-            R.drawable.thumnail2,
-            R.drawable.thumnail3,
-            R.drawable.thumnail4,
-            R.drawable.thumnail5,
-    };
+    private Integer[] listThumnail;
 
-    public SliderAdapter(Context context) {
-        this.context = context;
+    public SliderAdapter(Integer[] listThumnail) {
+        this.listThumnail = listThumnail;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package thuyvtk.activity.hci_bonita.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import thuyvtk.activity.hci_bonita.R;
+import thuyvtk.activity.hci_bonita.activity.DetailDiscountActivity;
 
 public class TopAdapter extends RecyclerView.Adapter<TopAdapter.MyView> {
 
+    private Context context;
     public Integer[] tops = {
             R.drawable.top2,
             R.drawable.top1,
@@ -65,6 +69,11 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.MyView> {
             "CHANG Salon : Trang điểm cô dâu",
 
     };
+
+    public TopAdapter(Context context) {
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -77,6 +86,30 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.MyView> {
         holder.ivImg1.setImageResource(tops[position]);
         holder.ivImg2.setImageResource(tops[position + 4]);
         holder.ivImg3.setImageResource(tops[position + 8]);
+
+        holder.ivImg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailDiscountActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        holder.ivImg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailDiscountActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        holder.ivImg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailDiscountActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+
 
         holder.txtTop.setText(topNumber[position]);
         holder.txtTop2.setText(topNumber[position+4]);

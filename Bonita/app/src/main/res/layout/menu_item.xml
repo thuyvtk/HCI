@@ -24,9 +24,9 @@
             android:id="@+id/menu_title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center|left"
-            android:textSize="14dp"
+            android:textSize="15dp"
             android:text="Khuyen mai cua toi" />
 
         <LinearLayout

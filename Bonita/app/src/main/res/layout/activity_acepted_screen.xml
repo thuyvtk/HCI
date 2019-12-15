@@ -90,9 +90,10 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_location_black" />
                     <TextView
                         android:layout_marginTop="2dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cửa hàng áp dụng"
@@ -102,7 +103,7 @@
                         android:paddingLeft="50dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="02 Lý Thường Kiệt, Hồng Bàng, Hải Phòng"
+                        android:text="319/15 Quang Trung, phường 11, Gò Vấp, TP.HCM"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -116,11 +117,12 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_person" />
                     <TextView
                         android:layout_marginTop="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
                         android:text="Số lượng"
                         android:textColor="@color/gray" />
                     <TextView
@@ -128,7 +130,7 @@
                         android:paddingLeft="50dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="2 khách"
+                        android:text="1 khách"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -142,12 +144,14 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_time" />
                     <TextView
                         android:layout_marginTop="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ngày đặt"
+                        android:layout_marginLeft="5dp"
+
                         android:textColor="@color/gray" />
                     <TextView
                         android:gravity="right"
@@ -174,6 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Giờ đặt"
+                        android:layout_marginLeft="5dp"
                         android:textColor="@color/gray" />
                     <TextView
                         android:gravity="right"
@@ -194,19 +199,20 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_tag_black" />
                     <TextView
                         android:layout_marginTop="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ưu đãi"
+                        android:layout_marginLeft="5dp"
                         android:textColor="@color/gray" />
                     <TextView
                         android:gravity="right"
                         android:paddingLeft="50dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="169K"
+                        android:text="-69%"
                         android:textColor="@color/red"
                         android:textStyle="bold" />
                 </LinearLayout>

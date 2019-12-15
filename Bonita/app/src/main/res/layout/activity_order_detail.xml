@@ -25,23 +25,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="30 Shine"
+                android:text="NHAT THIEN SALON"
                 android:textColor="@color/gray" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="16dp"
                 android:gravity="center"
                 android:text="XÁC NHẬN ĐẶT CHỖ"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                android:textSize="17dp"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -74,12 +76,12 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_location_black" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -91,7 +93,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="02 Lý Thường Kiệt, Hồng Bàng, Hải Phòng"
+                            android:text="319/15 Quang Trung, phường 11, Gò Vấp, TP.HCM"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -109,12 +111,12 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_person" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -144,12 +146,12 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_time" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -180,12 +182,12 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:src="@drawable/ic_tag_black" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -266,29 +268,6 @@
                     android:text="thuyvtkSE63436@fpt.edu.vn"
                     android:textColor="@color/black" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="20dp"
-                    android:textSize="18dp"
-                    android:text="CÓ DỊP ĐẶC BIỆT"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Tổ chức sinh nhật"
-                        android:textColor="@color/black"/>
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Tiệc liên hoan"
-                        android:textColor="@color/black"/>
-                </RadioGroup>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

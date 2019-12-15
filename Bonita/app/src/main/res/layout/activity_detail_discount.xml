@@ -1,50 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".activity.DetailDiscountActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/orange">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
+                    android:background="@color/main"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:id="@+id/btnBack"
+                        android:layout_width="40dp"
+                        android:layout_height="39dp"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginTop="3dp"
                         android:src="@drawable/ic_pre" />
 
                     <TextView
-                        android:layout_width="300dp"
+                        android:layout_width="280dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="10dp"
-                        android:text="Tealive: CHỈ TỪ 20k MENU ĐỒ UỐNG"
-                        android:textColor="@color/white"
+                        android:text="NHAT THIEN SALON : -69%"
+                        android:textColor="#999999"
                         android:textSize="15dp" />
 
-                    <ImageButton
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/border_cycle_white" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_bookmark_border_black_24dp" />
 
                 </LinearLayout>
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderCircularHandlerEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
 
             </LinearLayout>
 
@@ -61,35 +86,38 @@
                     android:gravity="center|left">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_add_black" />
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_tag_red" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
                         android:text="-30%"
-                        android:textColor="@color/red" />
+                        android:textColor="@color/red"
+                        android:textSize="17dp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tealive: CHỈ TỪ 20k MENU ĐỒ UỐNG"
-                    android:textSize="24dp"
+                    android:layout_marginTop="7dp"
+                    android:text="NHAT THIEN SALON : Giảm giá 69% các dịch vụ làm tóc"
+                    android:textSize="22dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Đồ uống, trà sữa"
+                    android:layout_marginTop="5dp"
+                    android:text="Tóc nữ"
                     android:textColor="@color/gray" />
 
                 <LinearLayout
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:gravity="center|left">
 
                     <androidx.appcompat.widget.AppCompatRatingBar
@@ -118,36 +146,40 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Chọn cửa hàng áp dụng (7)"
-                            android:textColor="@color/gray"/>
+                            android:text="Chọn chi nhánh áp dụng (7)"
+                            android:textColor="@color/gray" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/cardviewborder"
                                 android:layout_width="match_parent"
                                 android:layout_height="30dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/cardviewborder"
                                 android:gravity="center|left"
                                 android:orientation="horizontal">
+
                                 <ImageView
                                     android:layout_width="20dp"
                                     android:layout_height="20dp"
-                                    android:src="@drawable/ic_add_black"/>
+                                    android:src="@drawable/ic_add_black" />
+
                                 <TextView
                                     android:id="@+id/address"
                                     android:layout_width="wrap_content"
@@ -155,37 +187,42 @@
                                     android:drawableRight="@drawable/ic_down_arrow"
                                     android:drawableTint="@color/button_green"
                                     android:gravity="center|left"
-                                    android:text="Tealive Vincom Lê...(3.8km)"
                                     android:onClick="clickToViewAllAddress"
+                                    android:text="319/15 Quang Tru...(3.8km)"
                                     android:textColor="@color/black"
                                     android:textSize="13dp" />
                             </LinearLayout>
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
                         android:gravity="center"
-                        android:layout_marginRight="16dp">
+                        android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Số lượng(SL >= 1)"
-                            android:textColor="@color/gray"/>
+                            android:text="Số người(SL >= 1)"
+                            android:textColor="@color/gray" />
+
                         <LinearLayout
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/cardviewborder"
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/cardviewborder"
                             android:gravity="center"
-                            android:orientation="horizontal"
-                            android:onClick="clickToViewNumberOrder">
+                            android:onClick="clickToViewNumberOrder"
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:src="@drawable/ic_add_black"/>
+                                android:src="@drawable/ic_add_black" />
+
                             <TextView
                                 android:id="@+id/number"
                                 android:layout_width="wrap_content"
@@ -193,23 +230,26 @@
                                 android:drawableRight="@drawable/ic_down_arrow"
                                 android:drawableTint="@color/button_green"
                                 android:gravity="center|left"
-                                android:text="1 ly"
+                                android:text="1 người"
                                 android:textColor="@color/black"
                                 android:textSize="13dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/cardviewborder"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/cardviewborder"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/ic_add_black"/>
+                        android:src="@drawable/ic_add_black" />
+
                     <TextView
                         android:id="@+id/time"
                         android:layout_width="wrap_content"
@@ -217,96 +257,116 @@
                         android:drawableRight="@drawable/ic_down_arrow"
                         android:drawableTint="@color/button_green"
                         android:gravity="center|left"
+                        android:onClick="clickToViewTime"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="Hôm nay"
-                        android:onClick="clickToViewTime"
                         android:textColor="@color/black"
                         android:textSize="13dp" />
                 </LinearLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="15dp"
                     android:id="@+id/rv_slotsAvailable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:layout_marginRight="16dp"
                     android:layout_weight="8"
                     android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
+
                 <Button
-                    android:layout_marginTop="20dp"
                     android:id="@+id/btnOrder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="xác nhận đặt chỗ"
-                    android:background="@color/red"
+                    android:layout_marginTop="30dp"
                     android:layout_marginRight="16dp"
+                    android:background="@color/red"
                     android:onClick="clickToOrder"
+                    android:text="xác nhận đặt chỗ"
                     android:textColor="@color/white"
-                    android:textStyle="bold"/>
-                <TextView
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Điều kiện áp dụng"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:text="THÔNG BÁO MÃ ĐẶT CHỐ QUA BONITA NGAY KHI ĐẾN CỬA HÀNG"/>
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/border_radius_deadline"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Điều kiện áp dụng"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="THÔNG BÁO MÃ ĐẶT CHỐ QUA BONITA NGAY KHI ĐẾN CỬA HÀNG"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="- Giảm 69% toàn bộ menu làm tóc" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="- Ưu đãi không bao gồm phục hồi tóc" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="THỜI GIAN ÁP DỤNG" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="- Khung giờ 7h00-13h30" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="- Áp dụng tất cả các ngày trong tuần" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="- Áp dụng các ngày lễ tết" />
+                </LinearLayout>
 
                 <TextView
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="- Giảm 30% toàn bộ menu"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="- Ưu đãi không bao gồm lột mụn."/>
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="THỜI GIAN ÁP DỤNG"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="- Khung giờ 9h00-22h30"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="- Áp dụng tất cả các ngày trong tuần"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="- Áp dụng các ngày lễ tết"/>
-
-                <TextView
                     android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:text="Địa điểm áp dụng"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:map="http://schemas.android.com/apk/res-auto"
                     xmlns:tools="http://schemas.android.com/tools"
                     android:id="@+id/map"
-                    android:layout_marginTop="10dp"
                     android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
+                    android:layout_marginTop="10dp"
                     tools:context=".StoreDetailsActivity" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 
 
 </LinearLayout>

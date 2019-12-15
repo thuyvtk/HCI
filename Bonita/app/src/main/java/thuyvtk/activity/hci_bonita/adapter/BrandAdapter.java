@@ -1,5 +1,7 @@
 package thuyvtk.activity.hci_bonita.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import thuyvtk.activity.hci_bonita.R;
+import thuyvtk.activity.hci_bonita.activity.BrandActivity;
 
 public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyView> {
 
+    private Context context;
+
     public Integer[] images = {
-            R.drawable.one,
             R.drawable.two,
+            R.drawable.one,
             R.drawable.three,
             R.drawable.four,
             R.drawable.five,
@@ -23,8 +28,8 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyView> {
     };
 
     public String[] brandNames = {
-      "Chang Nails",
       "30 Shine",
+      "Chang Nails",
       "Loli Nails",
       "Gift Salon",
       "Men Barber",
@@ -49,6 +54,10 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyView> {
       "4.1 "
     };
 
+    public BrandAdapter(Context context) {
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -67,6 +76,23 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyView> {
         holder.txtBrandNameNext.setText(brandNames[position + 3]);
         holder.txtRateNext.setText(rates[position+3]);
         holder.txtTotalDiscountNext.setText(discounts[position+3]);
+
+        holder.ivBrand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, BrandActivity.class);
+                context.startActivity(intent);
+            }
+        });
+        holder.ivBrandNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, BrandActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
