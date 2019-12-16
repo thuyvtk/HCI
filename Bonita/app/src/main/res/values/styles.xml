@@ -22,6 +22,10 @@
         <item name="android:textSize">22px</item>
     </style>
 
+    <style name="BackgroundImage">
+        <item name="android:background">@drawable/brand_detail</item>
+    </style>
+
     <!--    lowercase-->
     <style name="CustomTextAppearance" parent="TextAppearance.AppCompat">
         <item name="textAllCaps">false</item>
