@@ -2,6 +2,7 @@ package thuyvtk.activity.hci_bonita.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,5 +19,10 @@ public class TradeMarkFollow extends AppCompatActivity {
 
     public void back(View view) {
         this.finish();
+    }
+
+    public void clickToViewSale(View view) {
+        Intent intent =  new Intent(this,BrandActivity.class);
+        startActivity(intent);
     }
 }

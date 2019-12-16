@@ -35,61 +35,384 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/main_ic_search"/>
-        <TextView
+        <EditText
             android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:textSize="14dp"
+            android:layout_marginRight="16dp"
             android:hint="Tìm thương hiệu"/>
     </LinearLayout>
-    <TextView
-        android:text="THEO DÕI THÊM"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="16dp"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:background="@drawable/border_bottom_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="16dp"
-        android:gravity="left|center">
-        <ImageView
-            android:id="@+id/menu_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_add_black" />
-        <LinearLayout
-            android:gravity="right"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@color/orange"/>
-        </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
-            android:layout_marginRight="16dp"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="right|center">
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top2"/>
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
             <TextView
-                android:gravity="right|center"
-                android:text="Xem ưu đãi"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-            <ImageView
+                android:text="THEO DÕI THÊM"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top3"/>
+                </LinearLayout>
 
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_chevron_right_black" />
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top4"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top5"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top6"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top7"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top8"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_bottom_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="16dp"
+                android:gravity="left|center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_add_black" />
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/top2"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center">
+
+                    <TextView
+                        android:onClick="clickToViewSale"
+                        android:gravity="right|center"
+                        android:text="Xem ưu đãi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <ImageView
+
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_chevron_right_black" />
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
 </LinearLayout>
