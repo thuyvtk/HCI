@@ -18,6 +18,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private List<String> list;
     public int selectedPosition = 0;
+    boolean isSale = true;
 
     public class MyView extends RecyclerView.ViewHolder {
 
@@ -37,6 +38,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.list = horizontalList;
     }
 
+    public RecyclerViewAdapter(List<String> list, boolean isSale) {
+        this.list = list;
+        this.isSale = isSale;
+    }
+
     @Override
     public MyView onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -49,7 +55,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(final MyView holder, final int position) {
 
         holder.slot_textview1.setText(list.get(position));
-        holder.slot_textview2.setText("-69%");
+        if(isSale){
+            holder.slot_textview2.setText("-69%");
+        }
+
         if (selectedPosition == position){
             holder.slot_textview1.setBackgroundResource(R.drawable.border_radius_slot_item_green);
             holder.slot_textview2.setTextColor(Color.parseColor("#009432"));
