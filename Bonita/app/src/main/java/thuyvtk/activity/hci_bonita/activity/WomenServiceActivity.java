@@ -1,5 +1,6 @@
 package thuyvtk.activity.hci_bonita.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -193,6 +194,8 @@ public class WomenServiceActivity extends FragmentActivity {
         });
     }
 
-    public void loadFragment(Integer[] imgs, String[] names,String[] discounts) {
+    public void openFilter(View view) {
+        Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
     }
 }

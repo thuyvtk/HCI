@@ -261,7 +261,7 @@
                         android:layout_height="40dp"
                         style="@style/CustomTextAppearance"
                         android:text="Xem thêm"
-                        android:background="@drawable/border_button"
+                        android:background="@drawable/view_more"
                         android:textColor="@color/view_more"
                         android:layout_marginTop="20dp"
                         android:layout_gravity="center_horizontal"/>

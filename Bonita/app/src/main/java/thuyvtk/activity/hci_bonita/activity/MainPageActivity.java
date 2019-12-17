@@ -240,4 +240,9 @@ public class MainPageActivity extends FragmentActivity implements ScrollPickerDi
         Intent intent = new Intent(this, Notification.class);
         startActivity(intent);
     }
+
+    public void logout(View view) {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
 }
