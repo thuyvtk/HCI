@@ -94,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
-                        android:text="-30%"
+                        android:text="-65%"
                         android:textColor="@color/red"
                         android:textSize="17dp" />
                 </LinearLayout>
@@ -103,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
-                    android:text="NHAT THIEN SALON : Giảm giá 69% các dịch vụ làm tóc"
+                    android:text="NHAT THIEN SALON : Chỉ 299k combo uốn/duỗi/nhuộm + hấp collagen"
                     android:textSize="22dp"
                     android:textStyle="bold" />
 
@@ -305,24 +305,43 @@
                         android:textColor="@color/black"
                         android:textSize="18dp"
                         android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:background="@color/red"
+                        android:layout_marginTop="6dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="THÔNG BÁO MÃ ĐẶT CHỐ QUA BONITA NGAY KHI ĐẾN CỬA HÀNG"
-                        android:textSize="16dp" />
+                        android:textSize="16dp"
+                        android:textColor="@color/text"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Chỉ 299k "
+                            android:textColor="@color/red"/>
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="- Giảm 69% toàn bộ menu làm tóc" />
+                        android:text="- Combo Uốn/Duỗi/Nhuộm Collagen + " />
+
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="- Ưu đãi không bao gồm phục hồi tóc" />
+                        android:text="Hấp Collagen tại Nhật Thiên Salon ( Giá gốc 1.000k )" />
 
                     <TextView
                         android:layout_width="match_parent"

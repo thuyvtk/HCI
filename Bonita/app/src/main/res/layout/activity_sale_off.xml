@@ -34,20 +34,22 @@
         android:background="@drawable/boder_radius_tab_item"
         app:tabGravity="fill"
         app:tabMode="fixed"
-        app:tabTextAppearance="@style/TabOrderTextAppearance">
+        app:tabTextAppearance="@style/TabOrderTextAppearance"
+        app:tabTextColor="#000000">
 
-    <com.google.android.material.tabs.TabItem
-        android:id="@+id/tabBooking"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Đặt chỗ"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Đặt chỗ" />
 
-    <com.google.android.material.tabs.TabItem
-        android:id="@+id/tabHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Lịch sử" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Lịch sử" />
     </com.google.android.material.tabs.TabLayout>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
