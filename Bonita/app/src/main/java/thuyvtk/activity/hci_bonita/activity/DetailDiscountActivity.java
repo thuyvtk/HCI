@@ -132,6 +132,9 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
                 break;
             case 1:
                 number.setText(modelName);
+                int people = Integer.parseInt(modelName.substring(0,1));
+                recyclerViewHorizontalAdapter = new RecyclerViewAdapter(slots,true,people );
+                recyclerView.setAdapter(recyclerViewHorizontalAdapter);
                 break;
             case 2:
                 time.setText(modelName);
@@ -140,6 +143,7 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
         }
         scrollPickerDialog.dismiss();
     }
+
 
     public void clickToViewNumberOrder(View view) {
         flag = 1;

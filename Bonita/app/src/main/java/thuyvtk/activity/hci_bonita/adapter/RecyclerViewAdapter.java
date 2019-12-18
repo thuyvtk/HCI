@@ -19,6 +19,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<String> list;
     public int selectedPosition = 0;
     boolean isSale = true;
+    int numberPeople = 1;
+    int price = 299;
 
     public class MyView extends RecyclerView.ViewHolder {
 
@@ -42,6 +44,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.list = list;
         this.isSale = isSale;
     }
+    public RecyclerViewAdapter(List<String> list, boolean isSale, int numberPeople) {
+        this.list = list;
+        this.isSale = isSale;
+        this.numberPeople = numberPeople;
+    }
 
     @Override
     public MyView onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -56,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.slot_textview1.setText(list.get(position));
         if(isSale){
-            holder.slot_textview2.setText("-69%");
+            holder.slot_textview2.setText(numberPeople * price +"K");
         }
 
         if (selectedPosition == position){
