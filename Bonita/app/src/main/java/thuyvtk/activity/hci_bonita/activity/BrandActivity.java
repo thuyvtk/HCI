@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -29,6 +31,11 @@ public class BrandActivity extends FragmentActivity implements ScrollPickerDialo
     RecyclerViewAdapter recyclerViewHorizontalAdapter;
     LinearLayoutManager horizontalLayout;
     TextView number, address, time;
+    TextView total;
+    CheckBox check1,check2, check3, check4;
+    int price = 40;
+    int people = 1 ;
+    int[] servicePrice = {40,10,10,120};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +45,58 @@ public class BrandActivity extends FragmentActivity implements ScrollPickerDialo
         recyclerView = (RecyclerView) findViewById(R.id.rv_slotsAvailableBrand);
         recyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
         AddItemsToRecyclerViewArrayList();
-        recyclerViewHorizontalAdapter = new RecyclerViewAdapter(slots,true);
+        recyclerViewHorizontalAdapter = new RecyclerViewAdapter(slots,false);
 
         horizontalLayout = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayout);
 
         recyclerView.setAdapter(recyclerViewHorizontalAdapter);
+
+        // set checkbox
+        check1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    price = price + servicePrice[0];
+                }else{
+                    price = price - servicePrice[0];
+                }
+                total.setText(people * price +"K");
+            }
+        });
+        check2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    price = price + servicePrice[1];
+                }else{
+                    price = price - servicePrice[1];
+                }
+                total.setText(people * price +"K");
+            }
+        });
+        check3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    price = price + servicePrice[2];
+                }else{
+                    price = price - servicePrice[2];
+                }
+                total.setText(people * price +"K");
+            }
+        });
+        check4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    price = price + servicePrice[3];
+                }else{
+                    price = price - servicePrice[3];
+                }
+                total.setText(people * price +"K");
+            }
+        });
     }
 
     public void defineView() {
@@ -54,6 +107,11 @@ public class BrandActivity extends FragmentActivity implements ScrollPickerDialo
         number = findViewById(R.id.number);
         time = findViewById(R.id.time);
         address = findViewById(R.id.txtAddessBrand);
+        check1 =  findViewById(R.id.check1);
+        check2 =  findViewById(R.id.check2);
+        check3 =  findViewById(R.id.check3);
+        check4 =  findViewById(R.id.check4);
+        total = findViewById(R.id.total);
     }
 
     public void clickToViewTime(View view) {
@@ -71,7 +129,7 @@ public class BrandActivity extends FragmentActivity implements ScrollPickerDialo
         scrollPickerDialog = new ScrollPickerDialog(1, arrItems, "CHI NHÁNH");
         scrollPickerDialog.show(fm, "fragment_choose_slot");
     }
-    int people = 1 ;
+
     @Override
     public void itemPicked(Integer itemType, Integer modelId, String modelName) {
         switch (flag) {
@@ -81,8 +139,7 @@ public class BrandActivity extends FragmentActivity implements ScrollPickerDialo
             case 1:
                 number.setText(modelName);
                 people = Integer.parseInt(modelName.substring(0,1));
-                recyclerViewHorizontalAdapter = new RecyclerViewAdapter(slots,true,people );
-                recyclerView.setAdapter(recyclerViewHorizontalAdapter);
+                total.setText(people * price+"K");
                 break;
             case 2:
                 time.setText(modelName);
@@ -116,11 +173,23 @@ public class BrandActivity extends FragmentActivity implements ScrollPickerDialo
         slots.add("12:30");
         slots.add("13:00");
         slots.add("13:30");
+        slots.add("14:00");
+        slots.add("14:30");
+        slots.add("15:00");
+        slots.add("15:30");
+        slots.add("16:00");
+        slots.add("16:30");
+        slots.add("17:00");
+        slots.add("17:30");
+        slots.add("18:00");
+
     }
 
     public void clickToOrder(View view) {
         Intent intent = new Intent(this, OrderDetail.class);
         intent.putExtra("NUMBER",people);
+        intent.putExtra("NORMAL","normal");
+        intent.putExtra("PRICE",price);
         startActivity(intent);
         this.finish();
     }

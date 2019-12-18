@@ -64,6 +64,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.slot_textview1.setText(list.get(position));
         if(isSale){
             holder.slot_textview2.setText(numberPeople * price +"K");
+        }else{
+            if(position >= 11){
+                holder.slot_textview2.setText("PM");
+            }else{
+                holder.slot_textview2.setText("AM");
+            }
         }
 
         if (selectedPosition == position){

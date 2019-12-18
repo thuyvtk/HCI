@@ -27,9 +27,7 @@ public class OrderDetail extends Activity {
         normal = intent.getStringExtra("NORMAL");
         number = intent.getIntExtra("NUMBER",1);
         if (normal != null) {
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams.height = 0;
-            linearLayout.setLayoutParams(layoutParams);
+          price = intent.getIntExtra("PRICE",299);
         }
         txtPrice = findViewById(R.id.txtPrice);
         txtNumber = findViewById(R.id.txtNumber);
@@ -38,6 +36,7 @@ public class OrderDetail extends Activity {
     }
 
     public void back(View view) {
+        this.finish();
     }
 
     public void clickToSendOrder(View view) {
