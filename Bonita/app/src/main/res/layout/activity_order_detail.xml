@@ -126,6 +126,7 @@
                             android:textColor="@color/gray" />
 
                         <TextView
+                            android:id="@+id/txtNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="1 người"
@@ -198,6 +199,7 @@
                             android:textColor="@color/gray" />
 
                         <TextView
+                            android:id="@+id/txtPrice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="299K"

@@ -63,18 +63,11 @@ public class ScrollPickerDialog extends DialogFragment {
         numberpicker.setDisplayedValues(arrItems);
         Button btnDoneChooseSlot = getView().findViewById(R.id.btnDoneChooseSlot);
 
-        numberpicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-//                listener.itemPicked(itemType, newVal, arrItems[newVal]);
-//                itemSelectedPos = newVal;
-                selected = arrItems[newVal];
-            }
-        });
+
         btnDoneChooseSlot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.itemPicked(itemType, 0, selected);
+                listener.itemPicked(itemType, 0, arrItems[numberpicker.getValue()]);
             }
         });
     }

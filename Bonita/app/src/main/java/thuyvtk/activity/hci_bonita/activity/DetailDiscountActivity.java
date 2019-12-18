@@ -123,7 +123,7 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
         scrollPickerDialog = new ScrollPickerDialog(1, arrItems, "CHI NHÁNH");
         scrollPickerDialog.show(fm, "fragment_choose_slot");
     }
-
+    int people = 1;
     @Override
     public void itemPicked(Integer itemType, Integer modelId, String modelName) {
         switch (flag) {
@@ -132,7 +132,7 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
                 break;
             case 1:
                 number.setText(modelName);
-                int people = Integer.parseInt(modelName.substring(0,1));
+                people = Integer.parseInt(modelName.substring(0,1));
                 recyclerViewHorizontalAdapter = new RecyclerViewAdapter(slots,true,people );
                 recyclerView.setAdapter(recyclerViewHorizontalAdapter);
                 break;
@@ -175,6 +175,7 @@ public class DetailDiscountActivity extends FragmentActivity implements ScrollPi
 
     public void clickToOrder(View view) {
         Intent intent = new Intent(this, OrderDetail.class);
+        intent.putExtra("NUMBER",people);
         startActivity(intent);
         this.finish();
     }

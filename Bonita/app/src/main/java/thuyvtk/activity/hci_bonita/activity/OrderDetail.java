@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import thuyvtk.activity.hci_bonita.R;
@@ -14,7 +15,9 @@ import thuyvtk.activity.hci_bonita.R;
 public class OrderDetail extends Activity {
     LinearLayout linearLayout;
     String normal;
-
+    TextView txtPrice,txtNumber;
+    int price = 299;
+    int number = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +25,16 @@ public class OrderDetail extends Activity {
         linearLayout = findViewById(R.id.linear_sale);
         Intent intent = this.getIntent();
         normal = intent.getStringExtra("NORMAL");
+        number = intent.getIntExtra("NUMBER",1);
         if (normal != null) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.height = 0;
             linearLayout.setLayoutParams(layoutParams);
         }
+        txtPrice = findViewById(R.id.txtPrice);
+        txtNumber = findViewById(R.id.txtNumber);
+        txtPrice.setText(price * number +"K");
+        txtNumber.setText(number + " người");
     }
 
     public void back(View view) {
