@@ -38,7 +38,6 @@ public class OrderDetail extends Activity {
     }
 
     public void back(View view) {
-        this.finish();
     }
 
     public void clickToSendOrder(View view) {
