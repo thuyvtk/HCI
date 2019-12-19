@@ -30,7 +30,7 @@ public class AceptedScreen extends Activity {
 
     public void useCode(View view) {
         Toast.makeText(this, "Bạn đã sử dụng mã đặt chỗ thành công!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, MainPageActivity.class);
+        Intent intent = new Intent(this, RatingActivity.class);
         startActivity(intent);
     }
 }
