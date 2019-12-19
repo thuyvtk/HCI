@@ -130,7 +130,7 @@
                         android:paddingLeft="50dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1 khách"
+                        android:text="2 khách"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -240,11 +240,40 @@
                         android:paddingLeft="50dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-65%"
+                        android:text="299k ( Giá gốc 1 triệu )"
+                        android:textColor="@color/red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/border_bottom"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/total" />
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thành tiền : "
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/gray" />
+                    <TextView
+                        android:gravity="right"
+                        android:paddingLeft="50dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="598k"
                         android:textColor="@color/red"
                         android:textStyle="bold" />
                 </LinearLayout>
                 <Button
+                    android:onClick="useCode"
                     android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -252,6 +281,7 @@
                     android:background="@color/red"
                     android:text="Sử dụng mã"/>
                 <Button
+                    android:onClick="CancelOrder"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
